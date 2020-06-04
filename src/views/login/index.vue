@@ -42,6 +42,14 @@
       </el-form-item>
 
       <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登录</el-button>
+
+      <div style="position:relative">
+        <div class="tips">
+          <span>用户名 : admin</span>
+          <span>密码 : admin</span>
+        </div>
+        </el-button>
+      </div>
     </el-form>
   </div>
 </template>
@@ -66,8 +74,8 @@ export default {
     }
     return {
       loginForm: {
-        username: '',
-        password: ''
+        username: 'admin',
+        password: 'admin'
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],
