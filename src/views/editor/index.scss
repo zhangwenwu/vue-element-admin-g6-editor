@@ -1,0 +1,137 @@
+@backgroundColor: #fbfbfb;
+@borderColor: #dadce0;
+
+@itempannelAndPageBorder: 1px solid #ccc;
+@pageHeight: calc(100vh - 41px - 37px);
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+#vue-g6-editor {
+  header:nth-of-type(1) {
+    background: @backgroundColor;
+    line-height: 40px;
+    padding-left: 20px;
+    border-bottom: 1px solid @borderColor;
+    box-sizing: border-box;
+  }
+  #toolbar {
+    background: @backgroundColor;
+    border-bottom: 1px solid @borderColor;
+    padding: 4px 14px;
+    i {
+      font-size: 18px;
+      padding: 4px;
+      margin-right: 8px;
+      color: #999999;
+      &:hover {
+        cursor: pointer;
+        background-color: #eeeeee;
+        color: #5cb6ff;
+      }
+    }
+  }
+  #itempannel {
+    box-sizing: border-box;
+    background-color: @backgroundColor;
+    border-right: 1px solid @borderColor;
+    height: @pageHeight;
+    padding-top: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    .getItem {
+      cursor: move;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  #page {
+    height: @pageHeight;
+    canvas {
+      display: block;
+      width: 100%;
+    }
+  }
+  .right-part {
+    height: @pageHeight;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  #detailpannel {
+    flex-grow: 1;
+
+    background-color: @backgroundColor;
+    border-left: 1px solid @borderColor;
+    overflow-y: scroll;
+    #nodeAttributeBar,
+    #edgeAttributeBar,
+    #groupAttributeBar,
+    #canvasAttributeBar,
+    #multiAttributeBar {
+      .title {
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+        box-sizing: border-box;
+        font-weight: bold;
+        font-size: 13px;
+        border-width: 0 0 1px 0;
+        border-style: solid;
+        border-color: @borderColor;
+      }
+      .main {
+        padding: 10px;
+      }
+    }
+  }
+  #minimap {
+    background-color: @backgroundColor;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    .title {
+      height: 34px;
+      line-height: 34px;
+      text-align: center;
+      box-sizing: border-box;
+      font-weight: bold;
+      font-size: 13px;
+      border-width: 0 0 1px 0;
+      border-style: solid;
+      border-color: @borderColor;
+    }
+  }
+  #contextmenu {
+    display: none;
+    .menu {
+      /deep/ .el-button {
+        width: 100%;
+        display: block;
+        margin-left: 0;
+        border-radius: 0 !important;
+        border-bottom: none;
+        &:nth-last-of-type(1) {
+          border-bottom: 1px solid #dcdfe6;
+        }
+      }
+    }
+  }
+  .save-as-image-dialog {
+    /deep/ .el-select {
+      display: block;
+    }
+  }
+}
