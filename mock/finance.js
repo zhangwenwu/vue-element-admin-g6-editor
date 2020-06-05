@@ -82,7 +82,7 @@ export default [
     }
   },
   {
-    url: '/finance/kmbm',
+    url: '/finance/kjkm',
     type: 'post',
     response: _ => {
       return {
@@ -110,7 +110,7 @@ export default [
   },
   // 财务查询表格接口
   {
-    url: '/finance/tables',
+    url: '/finance/kmyeb',
     type: 'post',
     response: config => {
       console.log(config)
